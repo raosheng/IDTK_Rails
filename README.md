@@ -4,6 +4,8 @@
 
 「我不懂某某」是一个系列的学习记录，在这个系列中我将记录集中一段时内学习某一个东西的全记录，并达到某一个特定的目标。「我不懂 Rails」是这个系列的第一部。这个系列的目标读者是有一定经验（一年）的开发人员。关注 [FrontSeat](https://github.com/frontseat) 的微信公众号来获得更新。
 
+![FrontSeat QR Code](./img/QRCode.png)
+
 ## 作者背景
 
 25岁，混荡多年，2014年[经济金融](https://www.rmit.edu.au/study-with-us/levels-of-study/undergraduate-study/bachelor-degrees/bp251)毕业，2015年[系统分析](https://www.iss.nus.edu.sg/graduate-programmes/programme/detail/graduate-diploma-in-systems-analysis)毕业生。前端开发工作经验一年，主要工作涉及的方面是快速原型开发和 API 实现。更多关于我开发学习经历的内容可以在[这里](http://udacity.li-xinyang.com/)找到。目标是成为一个技术商人。
