@@ -24,6 +24,11 @@
 
 我所使用的全部资料都会给予出处而不在此记录中重新复述，这样可以保证任何时候看到的外部的信息都能够保持最新的版本，这也意味着读者需要有一定的英文阅读能力才可以依照我的学习路径进行学习。这个系列中只会记录我对于每一个知识点的理解，自己在理解这些知识点时使用的实例。
 
+### 第 002 天（20161010）
+
+在学习 Rails 的过程中社区推荐了很多书籍，在最后我选择了 [Rails 4 in Action](https://www.safaribooksonline.com/library/view/rails-4-in/9781617291098/) 这本书，原因是 [Agile Web Development with Rails](https://pragprog.com/book/rails4/agile-web-development-with-rails-4) 时间有些久远（最近已经[更新](https://pragprog.com/book/rails5/agile-web-development-with-rails-5)到 Rails 5 的版本），[Ruby On Rails Tutorial (Rails 5)](https://www.railstutorial.org/) 内容对有我来说有些碎锁。Rails 4 in Action 可以让我了解我整个 Rails 软件的开发流程和过程中需要使用的相关技术。看这本书一周进程过半却发现有些地方不清晰，所以现在重头再过一次理解第一遍没有看懂的地方。在完结这本书之后会回头来看 Rails 官方指南和迅速过一便 Agile Web Development with Rails 。
+
+这一次的代码练习将完全忽略样式着重 Rails 软件本身的开发。
 
 ### 第 001 天（20161008）
 
@@ -33,7 +38,7 @@
 
 **安装 Ruby 环境**
 
-我选择使用 [rbenv](https://github.com/rbenv/rbenv) 来管理 Ruby 环境，只是因为它比 [rvm](https://github.com/rvm/rvm) 星星多一些其余的我不知道有何区别。rbenv 在 [macOS](https://en.wikipedia.org/wiki/Mac_OS) 上可以通过 [Homebrew](https://github.com/Homebrew/brew) 直接安装。下面以 macOS 为例来安装完全新的 Ruby 环境，
+我选择使用 [rbenv](https://github.com/rbenv/rbenv) 来管理 Ruby 环境，只是因为它比 [rvm](https://github.com/rvm/rvm) 星星多，用起来简单些，其余的我不知道有何区别。rbenv 在 [macOS](https://en.wikipedia.org/wiki/Mac_OS) 上可以通过 [Homebrew](https://github.com/Homebrew/brew) 直接安装。下面以 macOS 为例来安装完全新的 Ruby 环境，
 
 ```bash
 # 安装 rbenv
@@ -50,7 +55,7 @@ ruby --version
 # -> ruby 2.3.1p112 (2016-04-26 revision 54768) [x86_64-darwin16]
 ```
 
-不同系统的关于安装以及使用方法可以在 rbenv 项目仓库 [README](https://github.com/rbenv/rbenv#installation) 中找到。
+rbenv 在不同系统下安装以及使用方法可以在 rbenv 项目仓库 [README](https://github.com/rbenv/rbenv#installation) 中找到。
 
 **Rails 教程（Rails Guide）**
 
