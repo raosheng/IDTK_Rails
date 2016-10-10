@@ -28,12 +28,12 @@ end
 
 # Create README File Flashback Version
 `rm README.md`
-append_content_from("./content", "./README.md")
+append_content_from("./base", "./README.md")
 append_content_from("./log", "./README.md", "ASC")
 
 # Create README File Normal Version
 `rm README_Humanize.md`
-append_content_from("./content", "./README_Humanize.md")
+append_content_from("./base", "./README_Humanize.md")
 append_content_from("./log", "./README_Humanize.md")
 
 # Update remote resources
