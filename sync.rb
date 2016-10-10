@@ -40,4 +40,6 @@ append_content_from("./log", "./README_Humanize.md")
 `git commit -m "Update"`
 `git push origin dev`
 
+# TODO(Xinyang): Update Ruby-China Post
+
 
