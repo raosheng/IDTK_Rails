@@ -24,7 +24,6 @@ end
 
 # Fetch remote resources
 `git pull origin dev`
-`git add --all`
 
 # Create README File Flashback Version
 `rm README.md`
@@ -37,6 +36,7 @@ append_content_from("./base", "./README_Humanize.md")
 append_content_from("./log", "./README_Humanize.md")
 
 # Update remote resources
+`git add --all`
 `git commit -m "Update"`
 `git push origin dev`
 

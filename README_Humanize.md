@@ -51,6 +51,5 @@ rbenv 在不同系统下安装以及使用方法可以在 rbenv 项目仓库 [RE
 学习 Rails 开发除去相关书籍和教程外，官方框架教程是必读的内容。因为它一定是最新最完整的涵盖了 Rails 框架开发人员认为新手需要知道并正确使用该框架的各个方面的知识。
 ### 第 002 天（20161010）
 
-在学习 Rails 的过程中社区推荐了很多书籍，在最后我选择了 [Rails 4 in Action](https://www.safaribooksonline.com/library/view/rails-4-in/9781617291098/) 这本书，原因是 [Agile Web Development with Rails](https://pragprog.com/book/rails4/agile-web-development-with-rails-4) 时间有些久远（最近已经[更新](https://pragprog.com/book/rails5/agile-web-development-with-rails-5)到 Rails 5 的版本），[Ruby On Rails Tutorial (Rails 5)](https://www.railstutorial.org/) 内容对有我来说有些碎锁。Rails 4 in Action 可以让我了解我整个 Rails 软件的开发流程和过程中需要使用的相关技术。看这本书一周进程过半却发现有些地方不清晰，所以现在重头再过一次理解第一遍没有看懂的地方。在完结这本书之后会回头来看 Rails 官方指南和迅速过一遍 Agile Web Development with Rails 。
+在学习 Rails 的过程中社区推荐了很多书籍，在最后我选择了 [Rails 4 in Action](https://www.safaribooksonline.com/library/view/rails-4-in/9781617291098/) 这本书，原因是 [Agile Web Development with Rails](https://pragprog.com/book/rails4/agile-web-development-with-rails-4) 时间有些久远（最近已经[更新](https://pragprog.com/book/rails5/agile-web-development-with-rails-5)到 Rails 5 的版本），[Ruby On Rails Tutorial (Rails 5)](https://www.railstutorial.org/) 内容对有我来说有些碎锁。Rails 4 in Action 可以让我了解我整个 Rails 软件的开发流程和过程中需要使用的相关技术。看这本书一周进程过半却发现有些地方不清晰，所以现在重头再过一次理解第一遍没有看懂的地方。在完结这本书之后会回头来看 Rails 官方指南和迅速过一遍 Agile Web Development with Rails 。这一次的代码练习也将完全忽略样式着重 Rails 软件本身的开发，相关的 Gem 也不会过多的深究。
 
-这一次的代码练习也将完全忽略样式着重 Rails 软件本身的开发。
