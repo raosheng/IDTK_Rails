@@ -9,7 +9,9 @@
 <!-- ![FrontSeat QR Code](./img/QRCode.png) -->
 ## 笔者背景
 
-[李忻阳](http://stackoverflow.com/cv/lixinyang)，25岁，混荡多年，2014年[经济金融](https://www.rmit.edu.au/study-with-us/levels-of-study/undergraduate-study/bachelor-degrees/bp251)毕业，2015年[系统分析](https://www.iss.nus.edu.sg/graduate-programmes/programme/detail/graduate-diploma-in-systems-analysis)毕业生。前端开发工作经验一年，主要工作涉及的方面是快速原型开发和 API 实现。更多关于我开发学习经历的内容可以在[这里](http://udacity.li-xinyang.com/)找到。目标是成为一个技术商人。
+[李忻阳](http://stackoverflow.com/cv/lixinyang)，25岁，混荡多年，钟爱科技，喜欢设计。
+2014年[经济金融](https://www.rmit.edu.au/study-with-us/levels-of-study/undergraduate-study/bachelor-degrees/bp251)毕业，2015年[系统分析](https://www.iss.nus.edu.sg/graduate-programmes/programme/detail/graduate-diploma-in-systems-analysis)毕业生。
+前端开发工作经验一年半， SPA 开发（涉及 Backbone，D3.js，React.js），用户界面设计，用户交互实现。后端服务开发短暂接触过 Java Spring， .NET，以及 Flask，有一定关系型（`SQL`）和文件型（`MongoDB`）数据库使用经验，远端平台使用过 Digital Ocean 以及 Heroku 。现在工作主要涉及的方面是快速原型开发和 API 实现。更多关于我开发学习经历的内容可以在[这里](http://udacity.li-xinyang.com/)找到。
 ## 学习目标
 
 在众多的网站开发框架中选择 Rails 的理由是因为自己缺乏系统的网站开发的基础和经验，Rails 结合了网站开发中的最优开发流程和方式让我不会遗漏任何需要注意到的细节。
@@ -19,6 +21,9 @@
 在这个系列中我选择了最新的 Rails 版本 `5.0.0.1` （发布于 2016年8月）以及 `Ruby 2.3.1` 版本。在开始记录学习 Rails 过程之前已经完成了一些 Ruby 相关基础学习，其中包括 [Code School](https://www.codeschool.com/) 的 Ruby 以及 Rails 的基础教程和 [Learning Ruby The Hard Way](https://learnrubythehardway.org/) 的阅读和[练习](https://github.com/li-xinyang/FS_LearnRubyTheHardWay)。在接下来的整个学习 Rails 的过程中我不会强调操作系统，工具，相关知识也只会点到为止，更多的将着重与学习 Rails 的开发本身。
 
 我所使用的全部资料都会给予出处而不在此记录中重新复述，这样可以保证任何时候看到的外部的信息都能够保持最新的版本，这也意味着读者需要有一定的英文阅读能力才可以依照我的学习路径进行学习。这个系列中只会记录我对于每一个知识点的理解，自己在理解这些知识点时使用的实例。
+### 第 003 天（20161011）
+
+
 ### 第 002 天（20161010）
 
 在学习 Rails 的过程中社区推荐了很多书籍，在最后我选择了 [Rails 4 in Action](https://www.safaribooksonline.com/library/view/rails-4-in/9781617291098/) 这本书，原因是 [Agile Web Development with Rails](https://pragprog.com/book/rails4/agile-web-development-with-rails-4) 时间有些久远（最近已经[更新](https://pragprog.com/book/rails5/agile-web-development-with-rails-5)到 Rails 5 的版本），[Ruby On Rails Tutorial (Rails 5)](https://www.railstutorial.org/) 内容对有我来说有些碎锁。Rails 4 in Action 可以让我了解我整个 Rails 软件的开发流程和过程中需要使用的相关技术。看这本书一周进程过半却发现有些地方不清晰，所以现在重头再过一次理解第一遍没有看懂的地方。在完结这本书之后会回头来看 Rails 官方指南和迅速过一遍 Agile Web Development with Rails 。这一次的代码练习也将完全忽略样式着重 Rails 软件本身的开发，相关的 Gem 也不会过多的深究。
