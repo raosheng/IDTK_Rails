@@ -36,7 +36,7 @@ Rails.application.routes.draw do
 
   get    'signin',      to: "sessions#new"
   post   'signin',      to: "sessions#create"
-  delete 'signout/:id', to: "sessions#destroy", as: 'signout'
+  delete 'signout',     to: "sessions#destroy", as: 'signout'
 
   get    'feed',        to: "feed#index"
 end
