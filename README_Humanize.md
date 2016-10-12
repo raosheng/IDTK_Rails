@@ -155,6 +155,7 @@ rails g rspec:install
 ```
 
 ```ruby
+# DELETEME/spec/factories/user_factory.rb
 # Factory Girl: User Factory
 FactoryGirl.define do
   factory :user do
@@ -163,6 +164,7 @@ FactoryGirl.define do
   end
 end
 
+# DELETEME/spec/features/user_sign_in_spec.rb
 # RSpec: Features Test
 require 'rails_helper'
 
