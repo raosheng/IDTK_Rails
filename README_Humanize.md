@@ -59,4 +59,90 @@ rbenv 在不同系统下安装以及使用方法可以在 rbenv 项目仓库 [RE
 
 学习 Rails 项目结构，理解初始后全部自动生成文件的功能。理解模型的简单使用和校验以及数据库迁移的方法，明白 `resources` 的基础含义。理解控制器和显示层的关系，并熟悉常用 View Helper Method，如`form_for`，`form_tag`，`link_to`。学习简单路由的映射。练习在不使用第三方 Gem 的情况下实现用户注册（不加密密码）登陆登出功能（`Session` 的基础使用方法）以及错误提示（`flash` 的基础使用），这部分功能的实现在 Ruby On Rails Tutorial (Rails 5) [第八章](https://www.railstutorial.org/book/sign_up)和[第九章](https://www.railstutorial.org/book/advanced_login)有提及。
 
-替换掉明文密码，并使用 [Capybara](https://github.com/jnicklas/capybara) 通过 [RSpec](https://github.com/rspec/rspec-rails) 添加 Acceptance Test （正常 [BDD](https://en.wikipedia.org/wiki/Behavior-driven_development) 的开发流程则应先完成需求测试后实现功能）。
+使用 [bcrypt](https://github.com/codahale/bcrypt-ruby) 替换掉明文密码，并使用 [Capybara](https://github.com/jnicklas/capybara) 通过 [RSpec](https://github.com/rspec/rspec-rails) 添加 Acceptance Test （正常 [BDD](https://en.wikipedia.org/wiki/Behavior-driven_development) 的开发流程则应先完成需求测试后实现功能，之后的练习也会使用正常 BDD 的方式来开发）。对于结合使用单元测试的方法现在还不清楚。
+
+```ruby
+# Routes
+Rails.application.routes.draw do
+  root "sessions#new"
+
+  resources :users
+
+  get    'signin',      to: "sessions#new"
+  post   'signin',      to: "sessions#create"
+  delete 'signout/:id', to: "sessions#destroy", as: 'signout'
+
+  get    'feed',        to: "feed#index"
+end
+
+# User Model
+class User < ApplicationRecord
+  validates :name, uniqueness: { case_sensitive: false }
+  has_secure_password  # `gem 'bcrypt'` in Gemfile
+end
+
+# Users Controller
+class UsersController < ApplicationController
+  def new
+    @user = User.new
+  end
+
+  def create
+    @user = User.new(user_params)
+    if @user.save
+      flash[:notice] = "User has been created successfully."
+      redirect_to feed_path
+    else
+      flash[:notice] = "User has not been created."
+      render :new
+    end
+  end
+
+  private
+    def user_params
+      params.require(:user).permit(:name, :password)
+    end
+end
+
+# Sessions Controller
+class SessionsController < ApplicationController
+  def new
+  end
+
+  def create
+    user = User.find_by(name: params[:name])
+    if user.authenticate(params[:password])
+      session[:user_id] = user.id
+      redirect_to feed_path
+    else
+      flash[:notice] = "Invalid username/password"
+      render :new
+    end
+  end
+
+  def destroy
+    session[:user_id] = nil
+    flash[:notice] = "Successfuly sign out"
+    redirect_to root_path
+  end
+end
+
+```
+
+```html
+<!-- New User Form -->
+<%= form_for @user, url: users_path, method: :post do |form| %>
+  <%= form.text_field :name %>
+  <%= form.password_field :password %>
+  <%= form.submit %>
+<% end %>
+```
+
+```html
+<!-- Sign-in Form -->
+<%= form_tag signin_path, method: :post do %>
+  <%= text_field_tag :name %>
+  <%= password_field_tag :password %>
+  <%= submit_tag "Sign in" %>
+<% end %>
+```
