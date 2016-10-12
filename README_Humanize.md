@@ -146,3 +146,48 @@ end
   <%= submit_tag "Sign in" %>
 <% end %>
 ```
+
+使用 RSpec 替换默认 [minitest](https://github.com/seattlerb/minitest)，添加 Capybara Acceptance Test 并使用 [factory_girl_rails](https://github.com/thoughtbot/factory_girl) 生成测试数据。
+
+```bash
+# 执行下面的代码如果需要默认使用 RSpec 而不是 minitest
+rails g rspec:install
+```
+
+```ruby
+# Factory Girl: User Factory
+FactoryGirl.define do
+  factory :user do
+    name "SampleUser"
+    password "SamplePassword"
+  end
+end
+
+# RSpec: Features Test
+require 'rails_helper'
+
+RSpec.feature 'User can sign in' do
+  let!(:user) { FactoryGirl.create(:user) }
+
+  scenario "with valid credentials" do
+    visit root_path
+    fill_in "name", with: user.name
+    fill_in "password", with: user.password
+    click_button "Sign in"
+
+    expect(page).to have_content "Successfully sign in"
+    expect(page).to have_content 'Feed'
+    expect(page).to have_current_path(feed_path)
+  end
+
+  scenario "unless with invalid credentials" do
+    visit root_path
+    fill_in "name", with: user.name
+    fill_in "password", with: ''
+    click_button 'Sign in'
+
+    expect(page).to have_content "Invalid username/password"
+    expect(page).to have_current_path(signin_path)
+  end
+end
+```

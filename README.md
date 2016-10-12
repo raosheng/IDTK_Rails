@@ -112,6 +112,51 @@ end
   <%= submit_tag "Sign in" %>
 <% end %>
 ```
+
+使用 RSpec 替换默认 [minitest](https://github.com/seattlerb/minitest)，添加 Capybara Acceptance Test 并使用 [factory_girl_rails](https://github.com/thoughtbot/factory_girl) 生成测试数据。
+
+```bash
+# 执行下面的代码如果需要默认使用 RSpec 而不是 minitest
+rails g rspec:install
+```
+
+```ruby
+# Factory Girl: User Factory
+FactoryGirl.define do
+  factory :user do
+    name "SampleUser"
+    password "SamplePassword"
+  end
+end
+
+# RSpec: Features Test
+require 'rails_helper'
+
+RSpec.feature 'User can sign in' do
+  let!(:user) { FactoryGirl.create(:user) }
+
+  scenario "with valid credentials" do
+    visit root_path
+    fill_in "name", with: user.name
+    fill_in "password", with: user.password
+    click_button "Sign in"
+
+    expect(page).to have_content "Successfully sign in"
+    expect(page).to have_content 'Feed'
+    expect(page).to have_current_path(feed_path)
+  end
+
+  scenario "unless with invalid credentials" do
+    visit root_path
+    fill_in "name", with: user.name
+    fill_in "password", with: ''
+    click_button 'Sign in'
+
+    expect(page).to have_content "Invalid username/password"
+    expect(page).to have_current_path(signin_path)
+  end
+end
+```
 ### 第 002 天（20161010）
 
 在学习 Rails 的过程中社区推荐了很多书籍，在最后我选择了 [Rails 4 in Action](https://www.safaribooksonline.com/library/view/rails-4-in/9781617291098/) 这本书，原因是 [Agile Web Development with Rails](https://pragprog.com/book/rails4/agile-web-development-with-rails-4) 时间有些久远（最近已经[更新](https://pragprog.com/book/rails5/agile-web-development-with-rails-5)到 Rails 5 的版本），[Ruby On Rails Tutorial (Rails 5)](https://www.railstutorial.org/) 内容对有我来说有些碎锁。Rails 4 in Action 可以让我了解我整个 Rails 软件的开发流程和过程中需要使用的相关技术。看这本书一周进程过半却发现有些地方不清晰，所以现在重头再过一次理解第一遍没有看懂的地方。在完结这本书之后会回头来看 Rails 官方指南和迅速过一遍 Agile Web Development with Rails 。这一次的代码练习也将完全忽略样式着重 Rails 软件本身的开发，相关的 Gem 也不会过多的深究。
