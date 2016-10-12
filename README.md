@@ -23,8 +23,9 @@
 我所使用的全部资料都会给予出处而不在此记录中重新复述，这样可以保证任何时候看到的外部的信息都能够保持最新的版本，这也意味着读者需要有一定的英文阅读能力才可以依照我的学习路径进行学习。这个系列中只会记录我对于每一个知识点的理解，自己在理解这些知识点时使用的实例。
 ### 第 003 天（20161012）
 
-学习 Rails 项目结构，理解初始后全部自动生成文件的功能。理解模型的简单使用和校验以及数据库迁移的方法，明白 `resources` 的基础含义。理解控制器和显示层的关系，并熟悉常用 View Helper Method，如`form_for`，`form_tag`，`link_to`。学习简单路由的映射。练习在不使用第三方 Gem 的情况下实现用户注册（不加密密码）登陆登出功能（`Session` 的基础使用方法）以及错误提示（`flash` 的基础使用）。
+学习 Rails 项目结构，理解初始后全部自动生成文件的功能。理解模型的简单使用和校验以及数据库迁移的方法，明白 `resources` 的基础含义。理解控制器和显示层的关系，并熟悉常用 View Helper Method，如`form_for`，`form_tag`，`link_to`。学习简单路由的映射。练习在不使用第三方 Gem 的情况下实现用户注册（不加密密码）登陆登出功能（`Session` 的基础使用方法）以及错误提示（`flash` 的基础使用），这部分功能的实现在 Ruby On Rails Tutorial (Rails 5) [第八章](https://www.railstutorial.org/book/sign_up)和[第九章](https://www.railstutorial.org/book/advanced_login)有提及。
 
+替换掉明文密码，并使用 [Capybara](https://github.com/jnicklas/capybara) 通过 [RSpec](https://github.com/rspec/rspec-rails) 添加 Acceptance Test 。
 ### 第 002 天（20161010）
 
 在学习 Rails 的过程中社区推荐了很多书籍，在最后我选择了 [Rails 4 in Action](https://www.safaribooksonline.com/library/view/rails-4-in/9781617291098/) 这本书，原因是 [Agile Web Development with Rails](https://pragprog.com/book/rails4/agile-web-development-with-rails-4) 时间有些久远（最近已经[更新](https://pragprog.com/book/rails5/agile-web-development-with-rails-5)到 Rails 5 的版本），[Ruby On Rails Tutorial (Rails 5)](https://www.railstutorial.org/) 内容对有我来说有些碎锁。Rails 4 in Action 可以让我了解我整个 Rails 软件的开发流程和过程中需要使用的相关技术。看这本书一周进程过半却发现有些地方不清晰，所以现在重头再过一次理解第一遍没有看懂的地方。在完结这本书之后会回头来看 Rails 官方指南和迅速过一遍 Agile Web Development with Rails 。这一次的代码练习也将完全忽略样式着重 Rails 软件本身的开发，相关的 Gem 也不会过多的深究。
