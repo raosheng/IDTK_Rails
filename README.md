@@ -74,7 +74,13 @@ Failures:
   1) Users can create new projects with providing invalid attributes
 ```
 
-看起来没有逻辑的原因是 RSpec 将 Feature 与 Scenario 连载一起写了，其正确的理解应该为在 “Users can create new projects” 功能下的 “with providing invalid attributes” 的情况。这里需要查看更多成熟项目的 Cypabara 的 Feature Test 代码来了解正确的使用方法。
+看起来没有逻辑的原因是 RSpec 将 Feature 与 Scenario 连在一起写了，其正确的理解应该为在 “Users can create new projects” 功能下的 “with providing invalid attributes” 的情况。这里需要查看更多成熟项目的 Cypabara 的 Feature Test 代码来了解正确的使用方法。参考这篇来自 Throughtbot 的 [How We Test Rails Applications](https://robots.thoughtbot.com/how-we-test-rails-applications#feature-specs) 中的写法 Feature 为一个功能而 Scenario 则应该为完整句子的独立场景。那么上面的输出就应该是下面的样子（我添加冒号让两个区域的关系更加明显），
+
+```bash
+Failures:
+
+  1) Users can create new projects: they use invalid attributes
+```
 ### 第 003 天（20161012）
 
 学习 Rails 项目结构，理解初始后全部自动生成文件的功能。理解模型的简单使用和校验以及数据库迁移的方法，明白 `resources` 的基础含义。理解控制器和显示层的关系，并熟悉常用 View Helper Method，如`form_for`，`form_tag`，`link_to`。学习简单路由的映射。练习在不使用第三方 Gem 的情况下实现用户注册（不加密密码）登陆登出功能（`Session` 的基础使用方法）以及错误提示（`flash` 的基础使用），这部分功能的实现在 Ruby On Rails Tutorial (Rails 5) [第八章](https://www.railstutorial.org/book/sign_up)和[第九章](https://www.railstutorial.org/book/advanced_login)有提及。
