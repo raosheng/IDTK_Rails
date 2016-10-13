@@ -12,7 +12,7 @@
 
 [李忻阳](http://stackoverflow.com/cv/lixinyang)，25岁，混荡多年，钟爱科技，喜欢设计。
 2014年[经济金融](https://www.rmit.edu.au/study-with-us/levels-of-study/undergraduate-study/bachelor-degrees/bp251)毕业，2015年[系统分析](https://www.iss.nus.edu.sg/graduate-programmes/programme/detail/graduate-diploma-in-systems-analysis)毕业生。
-前端开发工作经验一年半， SPA 开发（涉及 Backbone，D3.js，React.js），用户界面设计，用户交互实现。后端服务开发短暂接触过 Java Spring， .NET，以及 Flask，有一定关系型（`SQL`）和文件型（`MongoDB`）数据库使用经验，远端平台使用过 Digital Ocean 以及 Heroku 。现在工作主要涉及的方面是快速原型开发和 API 实现。更多关于我开发学习经历的内容可以在[这里](http://udacity.li-xinyang.com/)找到。
+前端开发工作经验一年半， SPA 开发（涉及 Backbone，D3.js，React.js），用户界面设计，用户交互实现。后端服务开发短暂接触过 Java Spring， .NET，以及 Flask，有一定关系型（`SQL`）和文档型（`MongoDB`）数据库使用经验，远端平台使用过 Digital Ocean 以及 Heroku 。现在工作主要涉及的方面是快速原型开发和 API 实现。更多关于我开发学习经历的内容可以在[这里](http://udacity.li-xinyang.com/)找到。
 ## 学习目标
 
 在众多的网站开发框架中选择 Rails 的理由是因为自己缺乏系统的网站开发的基础和经验，Rails 结合了网站开发中的最优开发流程和方式让我不会遗漏任何需要注意到的细节。
@@ -256,6 +256,6 @@ Failures:
 
 这篇文章还同样提到 Feature Test 不能完全替代单元测试，因为它慢所以更多测试应该在模块对应的测试中完成。Rails 4 in Action 中暂时还没有涉及到模型，视图和控制器的测试这些测试方法和测试过程都会在之后的学习过程中被再次提及。两本相关的书籍为 [Rails 4 Test Prescriptions](https://www.safaribooksonline.com/library/view/rails-4-test/9781680500493/) 和 [RSpec Essentials](https://www.safaribooksonline.com/library/view/rspec-essentials/9781784395902/) 。
 
-保存模型实例时如果出现错误，错误的信息会被保存到 `@obj.errors` 中。
+控制器在保存模型实例时如果出现了错误，错误的信息会被保存到实例对象之中既 `@object_instance.errors` 中。
 
 
