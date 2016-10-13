@@ -25,15 +25,10 @@ end
 # Fetch remote resources
 `git pull origin dev`
 
-# Create README File Flashback Version
+# Create README File Normal Version
 `rm README.md`
 append_content_from("./base", "./README.md")
-append_content_from("./log", "./README.md", "ASC")
-
-# Create README File Normal Version
-`rm README_Humanize.md`
-append_content_from("./base", "./README_Humanize.md")
-append_content_from("./log", "./README_Humanize.md")
+append_content_from("./log", "./README.md")
 
 # Update remote resources
 `git add --all`
