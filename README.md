@@ -81,6 +81,12 @@ Failures:
 
   1) Users can create new projects: they use invalid attributes
 ```
+
+这篇文章还同样提到 Feature Test 不能完全替代单元测试，因为它慢所以更多测试应该在模块对应的测试中完成。Rails 4 in Action 中暂时还没有涉及到模型，视图和控制器的测试这些测试方法和测试过程都会在之后的学习过程中被再次提及。两本相关的书籍为 [Rails 4 Test Prescriptions](https://www.safaribooksonline.com/library/view/rails-4-test/9781680500493/) 和 [RSpec Essentials](https://www.safaribooksonline.com/library/view/rspec-essentials/9781784395902/) 。
+
+保存模型实例时如果出现错误，错误的信息会被保存到 `@obj.errors` 中。
+
+
 ### 第 003 天（20161012）
 
 学习 Rails 项目结构，理解初始后全部自动生成文件的功能。理解模型的简单使用和校验以及数据库迁移的方法，明白 `resources` 的基础含义。理解控制器和显示层的关系，并熟悉常用 View Helper Method，如`form_for`，`form_tag`，`link_to`。学习简单路由的映射。练习在不使用第三方 Gem 的情况下实现用户注册（不加密密码）登陆登出功能（`Session` 的基础使用方法）以及错误提示（`flash` 的基础使用），这部分功能的实现在 Ruby On Rails Tutorial (Rails 5) [第八章](https://www.railstutorial.org/book/sign_up)和[第九章](https://www.railstutorial.org/book/advanced_login)有提及。
