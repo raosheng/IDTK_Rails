@@ -29,6 +29,52 @@
 使用 [Guard](https://github.com/guard/guard) 来跑 RSpec 测试代码，虽然还没有弄清楚文件更改自动跑测试的规则（暂时使用 [guard-rspec](https://github.com/guard/guard-rspec)），一键跑全部的测试也比手动输入测试命令要快许多。
 
 学习基础 `content_for` 与 `yield(:content_for_item)` 的使用方法。
+
+Rails 4 in Action 中写 Feature Test 样例的方式有些奇怪不太符合正常的表达逻辑，所以昨天我将情景（scenario）做了一些修改。下面的代码片段是书中的示例，
+
+```ruby
+require "rails_helper"
+
+RSpec.feature "Users can create new projects" do
+  before do
+    visit root_path
+    click_link "New Project"
+  end
+
+  scenario "with valid attributes" do
+    fill_in "Name", with: "New Project Name"
+    fill_in "Description", with: "New project description"
+    click_button "Create Project"
+
+    expect(page).to have_content "Project has been created."
+    expect(page).to have_content "New Project Name"
+    expect(page).to have_content "New project description"
+
+    project = Project.find_by(name: "New Project Name")
+    expect(page.current_url).to eq project_url(project)
+    expect(page).to have_title "New Project Name - Projects - Ticketee"
+  end
+
+  scenario "with providing invalid attributes" do
+    fill_in "Name", with: ""
+    fill_in "Description", with: ""
+    click_button "Create Project"
+
+    expect(page).to have_content "Project has not been created."
+    expect(page).to have_content "Name can't be blank"
+  end
+end
+```
+
+输出的结果为如下片段，
+
+```bash
+Failures:
+
+  1) Users can create new projects with providing invalid attributes
+```
+
+看起来没有逻辑的原因是 RSpec 将 Feature 与 Scenario 连载一起写了，其正确的理解应该为在 “Users can create new projects” 功能下的 “with providing invalid attributes” 的情况。这里需要查看更多成熟项目的 Cypabara 的 Feature Test 代码来了解正确的使用方法。
 ### 第 003 天（20161012）
 
 学习 Rails 项目结构，理解初始后全部自动生成文件的功能。理解模型的简单使用和校验以及数据库迁移的方法，明白 `resources` 的基础含义。理解控制器和显示层的关系，并熟悉常用 View Helper Method，如`form_for`，`form_tag`，`link_to`。学习简单路由的映射。练习在不使用第三方 Gem 的情况下实现用户注册（不加密密码）登陆登出功能（`Session` 的基础使用方法）以及错误提示（`flash` 的基础使用），这部分功能的实现在 Ruby On Rails Tutorial (Rails 5) [第八章](https://www.railstutorial.org/book/sign_up)和[第九章](https://www.railstutorial.org/book/advanced_login)有提及。
