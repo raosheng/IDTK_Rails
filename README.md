@@ -24,7 +24,11 @@
 我所使用的全部资料都会给予出处，资料内容则不会在此记录中重新复述，这样可以保证任何时候浏览外部信息时都能够保持最新的资料版本。这个系列中只会记录我对于每一个知识点的理解和自己在理解知识点时所使用到的个别代码实例。
 ### 第 004 天（20161013）
 
-理解 `before_action`， 它将会在 Rails 5 中完全[代替](https://github.com/rails/rails/commit/9d62e04838f01f5589fa50b0baa480d60c815e2c)旧的 [`before_filter`](https://github.com/rails/rails/blob/v5.0.0.beta2/actionpack/lib/abstract_controller/callbacks.rb#L190-L193)。了解学习 `ActionView` 中常用的帮助函数（Helper Methods）的存在和使用方法。`layout`，`view` 以及 `partial` 直接的关系和使用方法。
+理解 `before_action`， 它将会在 Rails 5 中完全[代替](https://github.com/rails/rails/commit/9d62e04838f01f5589fa50b0baa480d60c815e2c)旧的 [`before_filter`](https://github.com/rails/rails/blob/v5.0.0.beta2/actionpack/lib/abstract_controller/callbacks.rb#L190-L193)。了解学习 `ActionView` 中常用的帮助函数（Helper Methods）的存在和使用方法。`layout`，`view` 以及 `partial` 之间的关系和使用方法。
+
+使用 [Guard](https://github.com/guard/guard) 来跑 RSpec 测试代码，虽然还没有弄清楚文件更改自动跑测试的规则（暂时使用 [guard-rspec](https://github.com/guard/guard-rspec)），一键跑全部的测试也比手动输入测试命令要快许多。
+
+学习基础 `content_for` 与 `yield(:content_for_item)` 的使用方法。
 ### 第 003 天（20161012）
 
 学习 Rails 项目结构，理解初始后全部自动生成文件的功能。理解模型的简单使用和校验以及数据库迁移的方法，明白 `resources` 的基础含义。理解控制器和显示层的关系，并熟悉常用 View Helper Method，如`form_for`，`form_tag`，`link_to`。学习简单路由的映射。练习在不使用第三方 Gem 的情况下实现用户注册（不加密密码）登陆登出功能（`Session` 的基础使用方法）以及错误提示（`flash` 的基础使用），这部分功能的实现在 Ruby On Rails Tutorial (Rails 5) [第八章](https://www.railstutorial.org/book/sign_up)和[第九章](https://www.railstutorial.org/book/advanced_login)有提及。
