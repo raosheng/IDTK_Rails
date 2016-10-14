@@ -1,3 +1,4 @@
-source 'https://gems.ruby-china.org/'
+source 'https://rubygems.org'
 
-gem 'qiniu', '=> 6.4.1', '<= 6.6.0'
+gem 'qiniu'
+gem 'oauth2'

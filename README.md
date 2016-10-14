@@ -259,3 +259,6 @@ Failures:
 控制器在保存模型实例时如果出现了错误，错误的信息会被保存到实例对象之中既 `@object_instance.errors` 中。
 
 
+### 第 005 天（20161014）
+
+第四遍阅读 [The Rails Doctrine](https://ruby-china.org/topics/31249)，这次的版本来自于 Ruby China 社区。其中提到了 [Flow: The Psychology of Optimal Experience](https://www.amazon.com/Flow-Harper-Perennial-Modern-Classics-ebook/dp/B000W94FE6) 这本书。

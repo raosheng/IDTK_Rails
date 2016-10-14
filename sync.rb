@@ -1,3 +1,6 @@
+# encoding: UTF-8
+require "oauth2"
+
 def append_content_from(target_dir, file_path, order="DES")
   queue = []
 
@@ -22,17 +25,19 @@ def append_content_from(target_dir, file_path, order="DES")
   end
 end
 
-# Fetch remote resources
-`git pull origin dev`
+def sync_github
+  # Fetch remote resources
+  `git pull origin dev`
 
-# Create README File Normal Version
-`rm README.md`
-append_content_from("./base", "./README.md")
-append_content_from("./log", "./README.md")
+  # Create README File Normal Version
+  `rm README.md`
+  append_content_from("./base", "./README.md")
+  append_content_from("./log", "./README.md")
 
-# Update remote resources
-`git add --all`
-`git commit -m "Update"`
-`git push origin dev`
+  # Update remote resources
+  `git add --all`
+  `git commit -m "Update"`
+  `git push origin dev`
+end
 
-# TODO(Xinyang): Update Ruby-China Post
+sync_github
