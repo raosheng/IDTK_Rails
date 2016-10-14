@@ -16,7 +16,7 @@ def sync_ruby_china
 
   body_str = File.open('README.md', 'r').read
 
-  Faraday.post("#{API_URL}?access_token=#{access_token}", {
+  Faraday.post("#{api_url}?access_token=#{access_token}", {
     'title': '我不懂 Rails',
     'node_id': 26,
     'body': body_str
