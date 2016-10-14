@@ -261,6 +261,7 @@ Failures:
 
 ### 第 005 天（20161014）
 
-添加 [Travis-CI](https://travis-ci.org/) 自动同步更新在 Ruby China 的同名主题。打算在掌握基础 Rails 后学习 Ruby China 社区源码。
+添加 [Travis-CI](https://travis-ci.org/) 自动同步更新在 Ruby China 的同名主题。打算在掌握基础 Rails 后学习 Ruby China 社区源码。之后在文本中插入图片也需要在将图片上传至[七牛 CDN
+](https://github.com/qiniu/ruby-sdk) 。 
 
 第四遍阅读 [The Rails Doctrine](https://ruby-china.org/topics/31249)，这次的版本来自于 Ruby China 社区。其中提到了 [Flow: The Psychology of Optimal Experience](https://www.amazon.com/Flow-Harper-Perennial-Modern-Classics-ebook/dp/B000W94FE6) 这本书。
