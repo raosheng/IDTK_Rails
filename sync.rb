@@ -1,5 +1,4 @@
 # encoding: UTF-8
-require "oauth2"
 
 def append_content_from(target_dir, file_path, order="DES")
   queue = []
