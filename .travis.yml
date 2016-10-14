@@ -2,4 +2,5 @@ language: ruby
 rmv:
   - 2.3.1
 script:
+  - gem install oauth2
   - ruby sync_ruby_china.rb
