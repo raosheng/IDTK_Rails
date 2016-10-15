@@ -319,3 +319,12 @@ Rails in Action 4 中用 [simple_form](https://github.com/plataformatec/simple_f
 <% end %>
 ```
 
+不知道是因该在 `before` 块中使用 `FactoryGirl` 来创建测试数据还是应该是用 `let` 来创建测试数据。 `let` 创建一个和符号同样名字的函数，每当函数被调用块内的代码就会被执行。
+
+```ruby
+# lazy-loaded
+let(:project) { FactoryGirl.create(:project) }
+# evaluated immediately before test start
+let!(:project) { FactoryGirl.create(:project) }
+```
+
