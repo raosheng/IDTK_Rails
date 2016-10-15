@@ -270,3 +270,20 @@ Failures:
 
 更新 Dash for macOS Capybara [Cheatsheet](https://github.com/Kapeli/cheatsheets/pull/243/files) 。
 
+对于 `data: { confirm: "Sample text.." }` 不知道如何使用 JavaScript 生成更好看的确认方式代替浏览器原生的确认方式。迅速搜索了下解决办法，[t4t5/sweetalert](https://github.com/t4t5/sweetalert) 一个代替原生确认的前端库，[mois3x/sweet-alert-rails-confirm](https://github.com/mois3x/sweet-alert-rails-confirm) 是在前者基础上用来在 Rails 中代替默认确认的 Gem 。另外一个类似于 sweetalert 的库为 [Bootbox](http://bootboxjs.com/) 一个基于 Bootstrap 的前端确认库。
+
+[jquery-ujs](https://github.com/rails/jquery-ujs) 不是 jQuery UI ，它的作用是用来处理定制的 `data-` 属性从而不使用链接的默认事件发起方式例如 `GET` 。
+
+
+替换默认的确认的方式是复写在 `jquery-ujs` 中的事件处理函数，如下所示（更多细节可以阅读 [Custom dialog for data-confirm in Rails](http://thelazylog.com/custom-dialog-for-data-confirm-in-rails/) ）
+
+```js
+$.rails.allowAction = function(link){
+  if (link.data("confirm") == undefined){
+    return true;
+  }
+  $.rails.showConfirmationDialog(link);
+  return false;
+}
+```
+
