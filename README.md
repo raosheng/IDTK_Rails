@@ -266,3 +266,7 @@ Failures:
 
 > 在 Ruby 中，只要有好的理由没有什么可以阻止你用利器来扫除障碍。我们会通过约定、劝说和教育来推行好的理念，而不是通过禁止使用厨房中的利器，并坚持让每个人使用勺子来切西红柿。
 
+### 第 006 天（20161015）
+
+更新 Dash for macOS Capybara [Cheatsheet](https://github.com/Kapeli/cheatsheets/pull/243/files) 。
+
