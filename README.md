@@ -287,3 +287,35 @@ $.rails.allowAction = function(link){
 }
 ```
 
+建立新模型并添加两个模型之间的关系（一个项目有多个工单），
+
+```bash
+rails g model project name:string description:string
+rails g model ticket name:string description:string project:references
+```
+
+`project:references` 在 `ticket` 模型中定义 `project_id` 的外键并。
+
+```ruby
+class CreateTickets < ActiveRecord::Migration[5.0]
+  def change
+    create_table :tickets do |t|
+      t.string :name
+      t.string :description
+      t.references :project, foreign_key: true
+      t.timestamps
+    end
+  end
+end
+```
+
+Rails in Action 4 中用 [simple_form](https://github.com/plataformatec/simple_form) 来处理嵌套资源的表单生成，下面是不使用这个 Gem 来处理嵌套资源表单的方法，
+
+```html
+<%= form_for [project, ticket] do |form| %>
+  <%= form.text_field :name %>
+  <%= form.text_field :description %>
+  <%= form.submit "Create Ticket" %>
+<% end %>
+```
+
