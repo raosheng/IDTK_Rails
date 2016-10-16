@@ -328,3 +328,16 @@ let(:project) { FactoryGirl.create(:project) }
 let!(:project) { FactoryGirl.create(:project) }
 ```
 
+# 第 007 天（20161016）
+
+今天学习通过 [devise](https://github.com/plataformatec/devise) 来添加授权功能和建立模型之间的关系。
+
+```ruby
+# 初始化 Devise
+rails g devise:install
+# 创建 Devise 用户模型
+rails g devise user
+# 创建 Devise 所使用的视图
+rails g devise:views
+```
+
