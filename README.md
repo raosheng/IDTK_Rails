@@ -332,12 +332,36 @@ let!(:project) { FactoryGirl.create(:project) }
 
 今天学习通过 [devise](https://github.com/plataformatec/devise) 来添加授权功能和建立模型之间的关系。
 
-```ruby
+```bash
 # 初始化 Devise
 rails g devise:install
 # 创建 Devise 用户模型
 rails g devise user
 # 创建 Devise 所使用的视图
 rails g devise:views
+```
+
+建立模型之间的关系，
+
+```ruby
+class Ticket < ActiveRecord::Base
+  belongs_to :project
+  belongs_to :author, class_name: "User"
+end
+
+class User < ActiveRecord::Base
+  has_many :ticket
+end
+```
+
+创建模型之间关系的关键是创建数据库迁移文件（添加外键和索引）。
+
+```ruby
+class AddAuthorToTickets < ActiveRecord::Migration[5.0]
+  def change
+    add_reference :tickets, :author, index: true
+    add_foreign_key :tickets, :users, column: :author_id
+  end
+end
 ```
 
