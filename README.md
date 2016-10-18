@@ -328,7 +328,7 @@ let(:project) { FactoryGirl.create(:project) }
 let!(:project) { FactoryGirl.create(:project) }
 ```
 
-# 第 007 天（20161016）
+### 第 007 天（20161016）
 
 今天学习通过 [devise](https://github.com/plataformatec/devise) 来添加授权功能和建立模型之间的关系。
 
@@ -361,6 +361,30 @@ class AddAuthorToTickets < ActiveRecord::Migration[5.0]
   def change
     add_reference :tickets, :author, index: true
     add_foreign_key :tickets, :users, column: :author_id
+  end
+end
+```
+
+### 第 008 天（20161017）
+
+学习如何使用 RSpec 为控制器写单元测试。
+
+```ruby
+RSpec.describe Admin::ApplicationController, type: :controller do
+  let(:user) { FactoryGirl.create(:user) }
+
+  # 生成仿造用户数据
+  before do
+    allow(controller).to receive(:current_user).and_return(user)
+  end
+
+  context 'non-admin users' do
+    it 'are not able to access the index action' do
+      get :index
+
+      expect(response).to redirect_to '/'
+      expect(flash[:alert]).to eq 'You must be an admin to do that.'
+    end
   end
 end
 ```
